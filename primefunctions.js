@@ -21,4 +21,15 @@ function primeGen(threshold) {
   return primes;
 }
 
+function cumulativeSum(nums) {
+  const sums = [];
+  let curr = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sums.push(curr + nums[i]);
+    curr += nums[i];
+  }
+  return sums;
+}
+
 console.log(primeGen(10));
+console.log(cumulativeSum([1, 2, 3, 4]));
