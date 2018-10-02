@@ -31,5 +31,29 @@ function cumulativeSum(nums) {
   return sums;
 }
 
-console.log(primeGen(10));
+
+function maxPrimeSum(threshold) {
+  const primes = primeGen(threshold);
+  let finalSum = -1;
+  let finalCount = -1;
+  for (let i = 0; i < primes.length; i++) {
+    let sum = 0;
+    let count = 0;
+    let j = i;
+    while (sum + primes[j] < threshold) {
+      sum += primes[j];
+      count++;
+      j++;
+    }
+    if (isPrime(sum) && sum > finalSum && count > finalCount) {
+      finalSum = sum;
+      finalCount = count;
+    }
+  }
+  return finalSum;
+}
+
+
+console.log(primeGen(100));
 console.log(cumulativeSum([1, 2, 3, 4]));
+console.log(maxPrimeSum(1000));
