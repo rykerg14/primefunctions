@@ -50,7 +50,8 @@ function maxPrimeSum(threshold) {
       finalCount = count;
     }
   }
-  return finalSum;
+  const result = [finalSum, finalCount];
+  return result;
 }
 
 
