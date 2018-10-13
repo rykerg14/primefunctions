@@ -55,6 +55,6 @@ function maxPrimeSum(threshold) {
 }
 
 
-console.log(primeGen(100));
+console.log(primeGen(10));
 console.log(cumulativeSum([1, 2, 3, 4]));
 console.log(maxPrimeSum(1000));
