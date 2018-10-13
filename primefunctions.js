@@ -44,10 +44,10 @@ function maxPrimeSum(threshold) {
       sum += primes[j];
       count++;
       j++;
-    }
-    if (isPrime(sum) && sum > finalSum && count > finalCount) {
-      finalSum = sum;
-      finalCount = count;
+      if (isPrime(sum) && count > finalCount && sum > finalSum) {
+        finalSum = sum;
+        finalCount = count;
+      }
     }
   }
   const result = [finalSum, finalCount];
